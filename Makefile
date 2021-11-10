@@ -12,6 +12,9 @@ local: clean
 	cd build; cmake ..; make
 	cd src; ctags --c++-kinds=+cdefgmnpstuv --fields=+iaS --extra=+q *.h *.c
 
+run: local
+	./build/woodland
+
 docker:
 	@docker build -t $(APP) .
 	@docker run -it --rm $(APP):latest
