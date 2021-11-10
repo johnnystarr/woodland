@@ -1,12 +1,19 @@
+APP = woodland
 
-DEFAULT_GOAL: build
+DEFAULT_GOAL: local
 
 clean:
 	@echo Ok.
 	@rm -rf build
 	@rm -f src/tags
 
-build: clean
+local: clean
 	@mkdir -p build
-	cd build; cmake ..; make; ./woodland
+	cd build; cmake ..; make
 	cd src; ctags --c++-kinds=+cdefgmnpstuv --fields=+iaS --extra=+q *.h *.c
+
+docker:
+	@docker build -t $(APP) .
+
+run:
+	@docker run -it --rm $(APP):latest
