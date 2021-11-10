@@ -1,12 +1,18 @@
-#include <ncurses.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "character.h"
 
 int main()
 {	
-	initscr();			/* Start curses mode 		  */
-	printw("Woodland.\n"); /* Print Hello World		  */
-	refresh();			/* Print it on to the real screen */
-	getch();			/* Wait for user input */
-	endwin();			/* End curses mode		  */
+    Character *ch = malloc(sizeof(Character));
+    ch->age = 34;
+    ch->level = 100;
+    ch->name = "Johnny";
 
-	return 0;
+    printf("The character's name is %s\n", ch->name);
+    printf("The character's age is %d\n", ch->age);
+    printf("The character's level is %d\n", ch->level);
+
+    free(ch);
+    return 0;
 }
