@@ -14,6 +14,4 @@ local: clean
 
 docker:
 	@docker build -t $(APP) .
-
-run:
 	@docker run -it --rm $(APP):latest
