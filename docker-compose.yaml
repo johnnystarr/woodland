@@ -1,8 +1,0 @@
-version: '3'
-services:
-  woodland:
-    build: .
-    image: woodland-build:latest
-    working_dir: /build
-    environment: {}
-
