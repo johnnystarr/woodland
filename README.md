@@ -1,5 +1,8 @@
 # woodland
 
+![example workflow](https://github.com/johnnystarr/woodland/actions/workflows/cmake.yml/badge.svg)
+
+
 ```
                           _ _                 _ 
  __      _____   ___   __| | | __ _ _ __   __| |
