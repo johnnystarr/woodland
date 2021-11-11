@@ -4,7 +4,7 @@ DEFAULT_GOAL: local
 
 clean:
 	@echo Ok.
-	@rm -rf build
+	@rm -rf build dist
 	@rm -f src/tags
 
 local: clean
@@ -20,3 +20,7 @@ run: local tags
 docker:
 	@docker build -t $(APP) .
 	@docker run -it --rm $(APP):latest
+
+dist: local
+	@mkdir -p dist
+	@tar cfz ./dist/woodland.tar.gz README.md ./build/woodland
