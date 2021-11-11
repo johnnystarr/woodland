@@ -25,12 +25,16 @@ dist: local
 	@mkdir -p dist
 	@tar cfz ./dist/woodland.tar.gz README.md ./build/woodland
 
+validate-cut:
+	@echo "Are you sure you want to cut a new release? [y,n]"
+	@read answer
+
 cut-major:
 	@./.cut.sh major
 
 cut-minor:
 	@./.cut.sh minor
 
-cut-patch:
+cut-patch: validate-cut
 	@./.cut.sh patch
 
