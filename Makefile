@@ -10,9 +10,11 @@ clean:
 local: clean
 	@mkdir -p build
 	cd build; cmake ..; make
+
+tags: 
 	cd src; ctags --c++-kinds=+cdefgmnpstuv --fields=+iaS --extra=+q *.h *.c
 
-run: local
+run: local tags
 	./build/woodland
 
 docker:
