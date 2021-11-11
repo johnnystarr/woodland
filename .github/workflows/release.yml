@@ -24,12 +24,12 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           release_name: Woodland ${{ github.ref }}
+          body: |
+            Changes in this Release
+            - First Change
+            - Second Change
           draft: false
           prerelease: true
-          body: |
-          This is info about the release
-          - thing 1
-          - thing 2
 
       - name: Upload Release Asset
         id: upload-release-asset 
