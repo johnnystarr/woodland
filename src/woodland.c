@@ -1,13 +1,13 @@
-#include <stdio.h>
-#include <ncurses.h>
+#include "woodland.h"
 
 int main()
 {
-    printf("Woodland!\n");
+    printf("Woodland v%s\n", WOODLAND_VERSION);
+    printf("Press [Enter]\n");
     getchar();
 
 	initscr();			/* Start curses mode 		  */
-	printw("Hello World !!!");	/* Print Hello World		  */
+	printw("Woodland!");	/* Print Hello World		  */
 	refresh();			/* Print it on to the real screen */
 	getch();			/* Wait for user input */
 	endwin();			/* End curses mode		  */
