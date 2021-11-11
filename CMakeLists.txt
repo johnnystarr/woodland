@@ -6,23 +6,17 @@ find_package(Curses REQUIRED)
 include_directories(${CURSES_INCLUDE_DIR})
 
 add_executable (
-    ${CMAKE_PROJECT_NAME} src/woodland.c
+    ${PROJECT_NAME} src/woodland.c
 )
 
 target_compile_options(
-    ${CMAKE_PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic -Werror
+    ${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic -Werror
 )
 
-if(MSVC)
-    target_compile_options(${CMAKE_PROJECT_NAME} PRIVATE /W4 /WX)
-endif()
+target_compile_options("${PROJECT_NAME}" PRIVATE -Wall -Wextra -pedantic -Werror)
 
-if(APPLE)
-    add_definitions(-Weverything)
-endif()
-
-set_property(TARGET ${CMAKE_PROJECT_NAME} PROPERTY C_STANDARD 90)
+set_property(TARGET ${PROJECT_NAME} PROPERTY C_STANDARD 90)
 
 set(CURSES_NEED_NCURSES TRUE)
-target_link_libraries(${CMAKE_PROJECT_NAME} ${CURSES_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} ${CURSES_LIBRARIES})
 
