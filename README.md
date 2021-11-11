@@ -11,3 +11,9 @@
    \_/\_/ \___/ \___/ \__,_|_|\__,_|_| |_|\__,_|
                                                 
 ```
+
+### Running on Windows
+
+```
+$ docker run -it --rm ghcr.io/johnnystarr/woodland
+```
