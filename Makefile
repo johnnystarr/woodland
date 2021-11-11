@@ -24,3 +24,13 @@ docker:
 dist: local
 	@mkdir -p dist
 	@tar cfz ./dist/woodland.tar.gz README.md ./build/woodland
+
+cut-major:
+	@./.cut.sh major
+
+cut-minor:
+	@./.cut.sh minor
+
+cut-patch:
+	@./.cut.sh patch
+
