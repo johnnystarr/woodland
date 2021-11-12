@@ -51,4 +51,5 @@ sed -i "" "s/$old_version/$new_version/" src/woodland.h
 git add -A
 git commit -m "cut $bump_level release -> v${new_version}"
 git tag -a v$new_version
+git push -u origin master
 git push --tags
