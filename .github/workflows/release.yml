@@ -25,9 +25,7 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: Woodland ${{ github.ref }}
           body: |
-            Changes in this Release
-            - First Change
-            - Second Change
+            Pre-Release
           draft: false
           prerelease: true
 
@@ -39,5 +37,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./dist/woodland.tar.gz
-          asset_name: woodland.tar.gz
+          asset_name: woodland-linux.tar.gz
           asset_content_type: application/x-tar
