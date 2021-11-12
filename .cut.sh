@@ -48,7 +48,7 @@ new_version="$major.$minor.$patch"
 sed -i "" "s/$old_version/$new_version/" src/woodland.h
 
 # handle git ops
-#git add -A
-#git commit -m "cut $bump_level release -> v${new_version}"
-#git tag -a v$new_version
-#git push --tags
+git add -A
+git commit -m "cut $bump_level release -> v${new_version}"
+git tag -a v$new_version
+git push --tags
