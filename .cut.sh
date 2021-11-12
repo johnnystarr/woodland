@@ -1,5 +1,11 @@
 #!/bin/bash
 
+read -p "Are you sure you want to make a cut? [y/n] " answer
+if [ $answer != "y" ]; then
+    echo "quiting."
+    exit 0
+fi
+
 # determine the level of bumping (major, minor, patch)
 bump_level=$1
 
@@ -39,11 +45,10 @@ IFS=$OFIS
 new_version="$major.$minor.$patch"
 
 # bump the patch of our current version
-sed "s/$old_version/$new_version/" src/woodland.h
+sed -i "s/$old_version/$new_version/" src/woodland.h
 
-# todo: the following is to be evaluated
-
-echo "git add -A"
-echo "git commit -m 'cut $bump_level release -> v${new_version}'"
-echo "git tag -a v${new_version}"
-echo "git push --tags"
+# handle git ops
+git add -A
+git commit -m "cut $bump_level release -> v${new_version}"
+git tag -a v$new_version
+git push --tags
