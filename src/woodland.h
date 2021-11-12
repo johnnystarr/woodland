@@ -4,6 +4,6 @@
 #include <stdio.h>
 #include <ncurses.h>
 
-#define WOODLAND_VERSION "0.1.0"
+#define WOODLAND_VERSION "0.0.0"
 
 #endif
